@@ -1,0 +1,123 @@
+html {
+  height: 100%;
+}
+
+body {
+  --page-padding: 16px;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - var(--page-padding));
+  padding-bottom: var(--page-padding);
+  background-image: url("res/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% center;
+  text-align: center;
+  font-family: Arial;
+}
+
+.messages {
+  padding: var(--page-padding);
+  padding-bottom: 0;
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+}
+
+.message {
+  position: relative;
+  margin: 4px 0;
+  text-align: left;
+}
+
+/* Icons */
+
+.message:before {
+  content: '';
+  position: absolute;
+  vertical-align: top;
+  --size: 34px;
+  width: var(--size);
+  height: var(--size);
+  background-size: var(--size) var(--size);
+  border-radius: var(--size);
+}
+
+.user-message:before {
+  background-image: url('res/user.jpg');
+}
+
+.bot-message:before {
+  background-image: url('res/baelin.png');
+}
+
+/* Speech bubble */
+
+.message div {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 1.3em;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  max-width: 350px;
+  word-break: break-word;
+  margin-left: 44px;
+}
+
+.user-message div {
+  background-color: #09F;
+  color: white;
+}
+
+.bot-message div {
+  background-color: #f1f0f0;
+  color: black;
+}
+
+/* Typing effect */
+
+#typingElement {
+  display: none;
+}
+
+#typingElement div {
+  width: 40px;
+  transition: transform 0.4s;
+  transform: scale(0);
+}
+
+#typingElement img {
+  position: absolute;
+  margin-top: -9px;
+  width: 40px;
+}
+
+/* Input box */
+
+input {
+  position: fixed;
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  width: calc(100% - 2 * var(--page-padding));
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  border: solid 1px #666;
+  border-radius: 50px;
+  padding: 6px 20px;
+  outline: none;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb { /* Handle */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover { /* Handle:hover */
+  background: rgba(255, 255, 255, 0.9);
+}
