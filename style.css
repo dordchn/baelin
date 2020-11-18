@@ -8,12 +8,27 @@ body {
   padding: 0;
   height: calc(100% - var(--page-padding));
   padding-bottom: var(--page-padding);
-  background-image: url("res/background.png");
+  background-image: url('res/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70% center;
   text-align: center;
   font-family: Arial;
+}
+
+#loading-screen {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: opacity 0.4s;
+}
+#loading-screen img {
+  width: 100px;
+  margin-top: 200px;;
 }
 
 .messages {
