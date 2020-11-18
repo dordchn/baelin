@@ -38,9 +38,9 @@ async function baelingType(ms) {
   typingElement.style.display = "block";
   await delay(1);
   messages.scrollTop = messages.scrollHeight;
-  typingElement.firstChild.style.transform = "scale(1)";
+  typingElement.children[0].style.transform = "scale(1)";
   await delay(ANIM_TIME + ms);
-  typingElement.firstChild.style.transform = "";
+  typingElement.children[0].style.transform = "";
   await delay(ANIM_TIME);
   typingElement.style.display = "";
 }
