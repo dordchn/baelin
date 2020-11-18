@@ -121,3 +121,16 @@ input {
 ::-webkit-scrollbar-thumb:hover { /* Handle:hover */
   background: rgba(255, 255, 255, 0.9);
 }
+
+/* Credit */
+.credit {
+  position: fixed;
+  right: var(--page-padding);
+  top: var(--page-padding);
+}
+
+@media screen and (max-width: 600px) { /* Not showing credit on mobile */
+  .credit {
+    display: none;
+  }
+}
